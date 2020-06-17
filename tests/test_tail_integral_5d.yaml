@@ -1,0 +1,34 @@
+config:
+  problem_name: tail_integral_5d
+  tail_integral_d: 5
+
+  # model config
+  layers_q1: 2
+  layers_q2: 2
+  MADE_act: relu
+  MADE_hidden: 10
+
+  # optimization settings
+  epochs: 2
+  minibatch_size: 2
+  number_train_samples: 4
+  number_validation_samples: 2
+  max_dataset_iterations: 3
+  misstep_tolerance: 2
+  learning_rate: 0.001
+
+  # on plateau scheduler config
+  scheduler_patience: 50
+  scheduler_factor: 0.49
+
+  no_cuda: 0
+
+  # problem config
+  # u_D from Equation 24
+  max_theta: 3.0
+
+  # logging config
+  loss_print: 1
+  train_plot: 0
+  train_plot_frequency_in_seconds: 10.
+  checkpoint_frequency_in_seconds: 30.

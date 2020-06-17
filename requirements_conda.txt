@@ -1,0 +1,10 @@
+pandas
+tqdm
+scipy
+numpy
+matplotlib
+seaborn
+pymongo
+dnspython
+pyyaml
+configargparse

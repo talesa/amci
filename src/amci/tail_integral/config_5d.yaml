@@ -1,0 +1,59 @@
+config:
+  problem_name: tail_integral_5d
+  tail_integral_d: 5
+
+  # model config
+  layers_q1: 4
+  layers_q2: 2
+  MADE_act: relu
+  MADE_hidden: 1024
+
+  # optimization settings
+  epochs: 1000
+  minibatch_size: 6000
+  number_train_samples: 60000
+  number_validation_samples: 6000
+  max_dataset_iterations: 30
+  misstep_tolerance: 2
+  learning_rate: 0.0001
+
+  # on plateau scheduler config
+  scheduler_patience: 50
+  scheduler_factor: 0.49
+
+  no_cuda: 0
+
+  # problem config
+  # u_D from Equation 24
+  max_theta: 3.0
+
+  # logging config
+  loss_print: 1
+  checkpoint_frequency_in_seconds: 30.
+
+  # how many samples the gpu memory allows us to generate at once
+  number_of_samples_gpu_capacity: 2.5e5
+
+  ground_truth_samples: 1e10 # make this a power of 10
+  ground_truth_capacity: 5e5
+
+  logs_root: null
+
+  checkpoint_q1: null
+  checkpoint_q2: null
+
+  require_clean_repo: True
+
+  # number of tries determines the number of times a single N-samples estimator is determined in order to estimate the
+  #  variance of this given N-sample estimator, see caption of Figure 1 - [...] each separately estimated using
+  #  100 samples of the respective \hat{\delta}}(y, \theta).
+  figure_remse_number_of_y_theta_samples: 100
+  figure_remse_number_of_tries: 1e2
+  figure_remse_plot_snis_bound: True
+  figure_remse_points_to_be_displayed_with_a_log_scale: 100
+  figure_remse_xaxis_max_samples: 1e4
+
+  figure_remse_ylim_lower: 1e-5
+  figure_remse_ylim_upper: 1e2
+
+factor: null
